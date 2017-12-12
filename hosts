@@ -1,0 +1,5 @@
+[falcon_agent]
+10.2.8.233 ansible_ssh_user=root ansible_ssh_pass=Neunn2014@)!$
+
+#[total:children]
+#falcon

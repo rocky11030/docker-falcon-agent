@@ -1,0 +1,21 @@
+---
+- name: create falcon-agent directory
+  file:
+    path: /opt/falcon-agent
+    state: directory
+
+- name: copy falcon-agent directory
+  unarchive:
+    src: falcon-agent_0.2.1.tar.gz
+    dest: /opt/falcon-agent
+  tags:
+    - agent
+
+- name: copy falcon-agent config
+  template:
+    src: cfg.json
+    dest: /opt/falcon-agent/cfg.json
+
+- name: start falcon_agent.sh
+  shell: /opt/falcon-agent/control start
+
