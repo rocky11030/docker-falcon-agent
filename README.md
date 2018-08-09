@@ -7,6 +7,7 @@
 - 使用了原来版本的control脚本控制./control start ./control stop ./control restart
   ./control status
 - 替换了falcon-agent和cfg.json
+- 调整监控网卡的参数，默认为cfg.json的参数为"ifacePrefix": [ ], 可以修改为"ifacePrefix": ["eth", "em", "bond"]过滤输出这几个网卡
 
 
 第一步: 修改变量文件
