@@ -1,0 +1,13 @@
+---
+
+- name: Copy rabbitmq monitor script
+  template:
+    src: "rabbitmq-monitor.py.j2"
+    dest: "{{ agent_bin_dir }}/rabbitmq-monitor.py"
+    mode: "711"
+
+- name: Copy rabbitmq crontab script
+  template:
+    src: "rabbitmq-monitor.cron.j2"
+    dest: "/etc/cron.d/rabbitmq-monitor"
+    mode: "755"

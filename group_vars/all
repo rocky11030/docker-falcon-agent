@@ -1,2 +1,5 @@
 #falcon_agent
 falcon_server: 10.2.5.5
+hostip: 10.60.255.1
+rabbitmq_user: openstack
+rabbitmq_password: ***

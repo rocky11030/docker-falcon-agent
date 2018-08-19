@@ -1,0 +1,15 @@
+---
+- name: Copy mymon bin file
+  copy:
+    src: 'scripts/mymon'
+    dest: '{{ base_dir }}/bin/mymon'
+    mode: '0655'
+
+- name: Copy  mysqlmonitor script
+  template:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    mode: '{{ item.mode }}'
+  with_items:
+    - { src: 'mysql.cfg.j2', dest: '{{ base_dir }}/conf/mysql.cfg', mode: '644'}
+    - { src: 'mysql.cron.j2', dest: '/etc/cron.d/mysql', mode: '644'}

@@ -8,6 +8,7 @@
   ./control status
 - 替换了falcon-agent和cfg.json
 - 调整监控网卡的参数，默认为cfg.json的参数为"ifacePrefix": [ ], 可以修改为"ifacePrefix": ["eth", "em", "bond"]过滤输出这几个网卡
+- 加了rabbitmq的参数获取脚本和放入到/etc/cron.d/下面的cron自动执行脚本
 
 
 第一步: 修改变量文件

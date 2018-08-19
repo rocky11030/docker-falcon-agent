@@ -19,3 +19,10 @@
 - name: start falcon_agent.sh
   shell: /opt/falcon-agent/control start
 
+- import_tasks: rabbitmq.yml
+  when: inventory_hostname in groups['rabbitmq']
+  tags:
+    - rabbitmq
+
+#- import_tasks: mysql.yml
+#  when: inventory_hostname in groups['mysql']
